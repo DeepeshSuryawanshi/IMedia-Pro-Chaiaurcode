@@ -32,7 +32,7 @@ export const authOptions:NextAuthOptions = {
                     }
                 } catch (error) {
                     console.log(error)
-                    throw new Error(error)
+                    throw new Error("error in NEXT AUTH ");
                 }
               }
         })    
