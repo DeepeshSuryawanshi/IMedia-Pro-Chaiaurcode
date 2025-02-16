@@ -24,7 +24,7 @@ export default withAuth(
             }
         }
     }
-)
+);
 
 export const config = {
     matches:["/((?!_next/static|_next/images|favicon.ico|public/).*)"]
