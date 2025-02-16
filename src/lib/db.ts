@@ -25,10 +25,11 @@ export async function connectToDataBase() {
 
     try {
         cached.conn = await cached.promise;
+        console.log("DB Connecting")
     } catch (e) {
-         cached.promise = null;
-         throw e 
+        console.log("Fail to DB Connect")
+        cached.promise = null;
+        throw e 
     }
-    
     return cached.conn;
 }
