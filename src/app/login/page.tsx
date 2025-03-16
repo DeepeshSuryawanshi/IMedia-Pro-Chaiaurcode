@@ -14,14 +14,17 @@ export default function page() {
     const hadleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const response:SignInResponse =  await signIn("credentials", {
+            const response = await signIn("credentials", {
                 redirect: false, // Prevents full-page reload
                 email:eamil,
                 password,
               });
 
-            if (!response.ok) setError("Registration Failed")
-            const data = response.json();
+            if (!response || !response.ok) {
+                setError("Registration Failed");
+                return;
+            }
+            const data = response
             console.log(data)
         } catch (error) {
             throw new Error("Login Error")
